@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace Bulky.DataAccess.Reponsitory.IReponsitory
 {
-    internal interface IReponsitory<T> where T : class
+    public interface IReponsitory<T> where T : class
     {
         //T - Category
         IEnumerable<T> GetAll();
