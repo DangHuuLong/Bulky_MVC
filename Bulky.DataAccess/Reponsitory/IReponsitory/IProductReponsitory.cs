@@ -7,8 +7,9 @@ using BulkyBook.Models;
 
 namespace BulkyBook.DataAccess.Reponsitory.IReponsitory
 {
-    public interface ICategoryReponsitory: IReponsitory<Category>
+    public interface IProductReponsitory: IReponsitory<Product>
     {
-        void Update(Category obj);
+        void Update(Product obj);
     }
 }
+

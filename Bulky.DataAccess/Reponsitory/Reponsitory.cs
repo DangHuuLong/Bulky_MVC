@@ -4,11 +4,11 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Linq.Expressions;
-using Bulky.DataAccess.Data;
-using Bulky.DataAccess.Reponsitory.IReponsitory;
+using BulkyBook.DataAccess.Data;
+using BulkyBook.DataAccess.Reponsitory.IReponsitory;
 using Microsoft.EntityFrameworkCore;
 
-namespace Bulky.DataAccess.Reponsitory
+namespace BulkyBook.DataAccess.Reponsitory
 {
     public class Reponsitory<T> : IReponsitory<T> where T : class
     {

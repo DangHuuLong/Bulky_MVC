@@ -10,17 +10,17 @@ using BulkyBook.Models;
 
 namespace BulkyBook.DataAccess.Reponsitory
 {
-    public class CategoryReponsitory : Reponsitory<Category>, ICategoryReponsitory
+    public class ProductReponsitory : Reponsitory<Product>, IProductReponsitory
     {
         private ApplicationDbContext _db;
-        public CategoryReponsitory(ApplicationDbContext db):base(db) 
+        public ProductReponsitory(ApplicationDbContext db):base(db) 
         {
             _db = db;
         }
 
-        public void Update(Category obj)
+        public void Update(Product obj)
         {
-            _db.Categories.Update(obj);
+            _db.Products.Update(obj);
         }
     }
 }

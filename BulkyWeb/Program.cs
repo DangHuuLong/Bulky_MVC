@@ -1,8 +1,8 @@
-using Bulky.DataAccess.Data;
-using Bulky.DataAccess.Reponsitory;
-using Bulky.DataAccess.Reponsitory.IReponsitory;
+using BulkyBook.DataAccess.Data;
 using BulkyBook.DataAccess.Reponsitory;
 using BulkyBook.DataAccess.Reponsitory.IReponsitory;
+using BulkyBookBook.DataAccess.Reponsitory;
+using BulkyBookBook.DataAccess.Reponsitory.IReponsitory;
 using Microsoft.EntityFrameworkCore;
 
 var builder = WebApplication.CreateBuilder(args);

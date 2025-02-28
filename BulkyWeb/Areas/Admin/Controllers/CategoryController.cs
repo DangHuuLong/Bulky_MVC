@@ -1,11 +1,11 @@
-﻿using Bulky.DataAccess.Data;
-using Bulky.DataAccess.Reponsitory.IReponsitory;
-using Bulky.Models;
-using BulkyBook.DataAccess.Reponsitory;
+﻿using BulkyBook.DataAccess.Data;
 using BulkyBook.DataAccess.Reponsitory.IReponsitory;
+using BulkyBook.Models;
+using BulkyBookBook.DataAccess.Reponsitory;
+using BulkyBookBook.DataAccess.Reponsitory.IReponsitory;
 using Microsoft.AspNetCore.Mvc;
 
-namespace BulkyBookWeb.Areas.Admin.Controllers
+namespace BulkyBookBookWeb.Areas.Admin.Controllers
 {
     [Area("Admin")]
     public class CategoryController : Controller
