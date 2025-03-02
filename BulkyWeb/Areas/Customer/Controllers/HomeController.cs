@@ -1,8 +1,10 @@
 using BulkyBook.DataAccess.Reponsitory.IReponsitory;
 using BulkyBook.Models;
 using BulkyBookBook.DataAccess.Reponsitory.IReponsitory;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using System.Diagnostics;
+using System.Security.Claims;
 
 namespace BulkyBookBookWeb.Areas.Customer.Controllers
 {
@@ -33,6 +35,20 @@ namespace BulkyBookBookWeb.Areas.Customer.Controllers
                 ProductId = productId
             };
             return View(cart);
+        }
+
+        [HttpPost]
+        [Authorize]
+        public IActionResult Details(ShoppingCart shoppingCart)
+        {
+            var claimsIdentity = (ClaimsIdentity)User.Identity;
+            var userId = claimsIdentity.FindFirst(ClaimTypes.NameIdentifier).Value;
+            shoppingCart.ApplicationUserId = userId;
+
+            _unitOfWork.ShoppingCart.Add(shoppingCart);
+            _unitOfWork.Save();
+
+            return RedirectToAction(nameof(Index));
         }
 
         public IActionResult Privacy()
