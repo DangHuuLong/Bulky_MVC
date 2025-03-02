@@ -16,9 +16,11 @@ namespace BulkyBookBook.DataAccess.Reponsitory
         public ICategoryReponsitory Category { get; private set; }
         public ICompanyReponsitory Company { get; private set; }
         public IProductReponsitory Product { get; private set; }
+        public IShoppingCartReponsitory ShoppingCart { get; private set; }
         public UnitOfWork(ApplicationDbContext db) 
         {
             _db = db;
+            ShoppingCart = new ShoppingCartReponsitory(_db);
             Category = new CategoryReponsitory(_db);
             Product = new ProductReponsitory(_db);
             Company = new CompanyReponsitory(_db);

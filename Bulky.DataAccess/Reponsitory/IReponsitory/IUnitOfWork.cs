@@ -12,6 +12,7 @@ namespace BulkyBookBook.DataAccess.Reponsitory.IReponsitory
         ICategoryReponsitory Category { get; }
         IProductReponsitory Product { get; }
         ICompanyReponsitory Company { get; }
+        IShoppingCartReponsitory ShoppingCart { get; }
         void Save();
     }
 }
