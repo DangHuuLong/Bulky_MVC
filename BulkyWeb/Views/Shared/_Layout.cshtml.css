@@ -39,18 +39,8 @@ button.accept-policy {
   line-height: inherit;
 }
 
-html, body {
-    height: 100%;
-    display: flex;
-    flex-direction: column;
-}
-
-.container {
-    flex: 1; /* Nội dung chính chiếm hết phần còn lại */
-}
-
 .footer {
-    position: relative; /* Không dùng absolute */
+    position: absolute;
     width: 100%;
     line-height: 60px;
     background-color: #007bff;
