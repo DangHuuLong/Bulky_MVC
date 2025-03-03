@@ -17,6 +17,8 @@ namespace BulkyBookBook.DataAccess.Reponsitory
         public ICompanyReponsitory Company { get; private set; }
         public IProductReponsitory Product { get; private set; }
         public IShoppingCartReponsitory ShoppingCart { get; private set; }
+        public IOrderDetailReponsitory OrderDetail { get; private set; }
+        public IOrderHeaderReponsitory OrderHeader { get; private set; }
         public UnitOfWork(ApplicationDbContext db) 
         {
             _db = db;
@@ -24,6 +26,8 @@ namespace BulkyBookBook.DataAccess.Reponsitory
             Category = new CategoryReponsitory(_db);
             Product = new ProductReponsitory(_db);
             Company = new CompanyReponsitory(_db);
+            OrderDetail = new OrderDetailReponsitory(_db);
+            OrderHeader = new OrderHeaderReponsitory(_db);
         }
 
         public void Save()
