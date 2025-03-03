@@ -24,13 +24,14 @@ namespace BulkyBookWeb.Areas.Customer.Controllers
 
             ShoppingCartVM = new()
             {
-                ShoppingCartList = _unitOfWork.ShoppingCart.GetAll(u => u.ApplicationUserId == userId, includeProperties: "Product")
+                ShoppingCartList = _unitOfWork.ShoppingCart.GetAll(u => u.ApplicationUserId == userId, includeProperties: "Product"),
+                OrderHeader = new()
             };
 
             foreach (var cart in ShoppingCartVM.ShoppingCartList)
             {
                 double price = GetPriceBasedOnQuantity(cart);
-                ShoppingCartVM.OrderTotal += (price * cart.Count);
+                ShoppingCartVM.OrderHeader.OrderTotal += (price * cart.Count);
             }
 
             return View(ShoppingCartVM);
