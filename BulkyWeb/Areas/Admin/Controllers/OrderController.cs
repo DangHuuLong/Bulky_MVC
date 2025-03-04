@@ -1,4 +1,5 @@
 ﻿using BulkyBook.Models;
+using BulkyBook.Models.ViewModels;
 using BulkyBook.Utility;
 using BulkyBookBook.DataAccess.Reponsitory.IReponsitory;
 using Microsoft.AspNetCore.Hosting;
@@ -19,6 +20,17 @@ namespace BulkyBookWeb.Areas.Admin.Controllers
         public IActionResult Index()
         {
             return View();
+        }
+
+        public IActionResult Details(int orderId)
+        {
+            OrderVM orderVM = new()
+            {
+                OrderHeader = _unitOfWork.OrderHeader.Get(u => u.Id == orderId, includeProperties: "ApplicationUser"),
+                OrderDetail = _unitOfWork.OrderDetail.GetAll(u => u.OrderHeaderId == orderId, includeProperties: "Product")
+            };
+
+            return View(orderVM);
         }
 
 
